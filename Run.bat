@@ -1,0 +1,6 @@
+cd .\Debug
+start ServerPrototype.exe
+cd ../AutoTestUnit\bin\Debug
+start AutoTestUnit.exe 
+cd ../../../Navigator\bin\Debug
+start Navigator.exe "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" "../../../" ".cpp" ".h"

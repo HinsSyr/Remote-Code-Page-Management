@@ -1,0 +1,90 @@
+<!Doctype html> 
+<html> 
+<head> 
+
+<style> 
+body {
+padding:15px 40px;
+font-family: Consolas;
+font-size: 1.25em;
+font-weight: normal;
+}
+span{
+display:inline;
+}
+div{
+position:fixed;
+top:10px;
+right:10px;
+}
+.toggleClassDisplay{}
+.toggleMethodDisplay{}
+.toggleCommentsDisplay{}
+
+</style> 
+<script> 
+function showHideClass(className) {
+let elems = document.getElementsByClassName(className);
+if (elems === null) {
+return;
+}
+for (let i = 0; i < elems.length; ++i) {
+let displayProp = elems[i].style.display;
+if (displayProp === 'none')
+elems[i].style['display'] = "inline";
+else
+elems[i].style['display'] = "none";
+    }
+}
+
+</script> 
+</head> 
+<body> 
+<div> 
+<button onclick="showHideClass('toggleClassDisplay')">Show/Hide Class Contents
+</button>
+<button onclick = "showHideClass('toggleMethodDisplay')">Show/Hide Method Contents
+</button>
+<button onclick = "showHideClass('toggleCommentsDisplay')">Show/Hide Comments Contenst
+</button>
+
+</div> 
+<pre> 
+#pragma&nbsp;once
+<span class="toggleCommentsDisplay">/////////////////////////////////////////////////////////////////////</span>
+<span class="toggleCommentsDisplay">//&nbsp;CommLibWrapper.h&nbsp;-&nbsp;Comm&nbsp;object&nbsp;factory&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//</span>
+<span class="toggleCommentsDisplay">//&nbsp;ver&nbsp;1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//</span>
+<span class="toggleCommentsDisplay">//&nbsp;Jim&nbsp;Fawcett,&nbsp;CSE687-OnLine&nbsp;Object&nbsp;Oriented&nbsp;Design,&nbsp;Fall&nbsp;2017&nbsp;&nbsp;&nbsp;&nbsp;//</span>
+<span class="toggleCommentsDisplay">/////////////////////////////////////////////////////////////////////</span>
+<span class="toggleCommentsDisplay">/*
+*&nbsp;&nbsp;Provides&nbsp;export&nbsp;and&nbsp;import&nbsp;declarations&nbsp;for&nbsp;Comm
+*
+*&nbsp;&nbsp;Required&nbsp;Files:
+*&nbsp;-----------------
+*&nbsp;&nbsp;CommLibWrapper.h,&nbsp;CommLibWrapper.cpp
+*
+*&nbsp;&nbsp;Maintenance&nbsp;History:
+*&nbsp;----------------------
+*&nbsp;&nbsp;ver&nbsp;1.0&nbsp;:&nbsp;27&nbsp;Mar&nbsp;2018
+*&nbsp;&nbsp;-&nbsp;first&nbsp;release
+*/</span>
+#include&nbsp;&lt;string&gt;
+#include&nbsp;&quot;../MsgPassingComm/IComm.h&quot;
+
+#ifdef&nbsp;IN_DLL
+#define&nbsp;DLL_DECL&nbsp;__declspec(dllexport)
+#else
+#define&nbsp;DLL_DECL&nbsp;__declspec(dllimport)
+#endif
+
+namespace&nbsp;MsgPassingCommunication
+{
+&nbsp;&nbsp;extern&nbsp;&quot;C&quot;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;struct&nbsp;CommFactory&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;DLL_DECL&nbsp;IComm*&nbsp;create(const&nbsp;std::string&amp;&nbsp;machineAddress,&nbsp;size_t&nbsp;port);
+&nbsp;&nbsp;&nbsp;&nbsp;};
+&nbsp;&nbsp;}
+}
+</pre> 
+</body> 
+</html> 
