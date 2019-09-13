@@ -6,6 +6,7 @@
 
 
 =======Build Instructions=======
+
 1.You must run Visual Studio as administrator
 2.class library: AbstractSyntaxTree, AutoTestUnit, CommLibWrapper, Converter, BlockingQueue, CppNoSqlDb, CppProperties, Dependencies, Display,Executive,FileSystem,GrammarHelpers,Loader,Logger,Message,MsgPassingComm,Navigator,Parser,Process,Publisher,ScopeStack,SemiExpression,Sockets,Tokenizer,Translater,Utilities.
 3.Build rest as console application
