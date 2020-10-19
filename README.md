@@ -16,8 +16,11 @@
 
 3.Build rest as console application
 
-=======Run Instructions========
-command line for package Navigator:
-"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" "../../../" ".cpp" ".h"
+=======Run Instructions======== 
 
-run: multi-start Serverprototype and Navigator
+1.Command line for package Navigator:"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" "../../../" ".cpp" ".h"
+  Explain:1) "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" this is the address of your default browser so you can use application open file in the process.
+          2) "../../../"  this is the default for the root address.
+          3) ".cpp" ".h" this is for the filter to show the files that you want to transfer
+
+2.Run: multi-start Serverprototype and Navigator
