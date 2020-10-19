@@ -15,3 +15,9 @@
 2.class library: AbstractSyntaxTree, AutoTestUnit, CommLibWrapper, Converter, BlockingQueue, CppNoSqlDb, CppProperties, Dependencies, Display,Executive,FileSystem,GrammarHelpers,Loader,Logger,Message,MsgPassingComm,Navigator,Parser,Process,Publisher,ScopeStack,SemiExpression,Sockets,Tokenizer,Translater,Utilities.
 
 3.Build rest as console application
+
+=======Run Instructions========
+command line for package Navigator:
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" "../../../" ".cpp" ".h"
+
+run: multi-start Serverprototype and Navigator
